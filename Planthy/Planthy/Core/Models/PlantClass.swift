@@ -13,6 +13,7 @@ enum PlantClass: String, CaseIterable {
         }
     }
 
+    ///Las descripciones fueron hechas por ia ya que no sabemos tanto del cuidado de plantas pero es un plus jajaj
     var recommendation: String {
         switch self {
         case .healthy:
@@ -32,8 +33,6 @@ enum PlantClass: String, CaseIterable {
         }
     }
 
-    /// Ordered list matching model output indices [0, 1, 2].
-    /// Order matches PyTorch ImageFolder alphabetical class_to_idx:
-    /// 0=healthy, 1=powdery_mildew, 2=rust
+    ///Buscamos que nos devuelva un numero dentro del arreglo para indicarnos que estado tiene y despues no confundirnos ya que son valores previamente asignados, lo podemos ver como un diccionario si es mas facil
     static let orderedClasses: [PlantClass] = [.healthy, .powdery, .rust]
 }
